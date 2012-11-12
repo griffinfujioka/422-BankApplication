@@ -2,18 +2,18 @@
 <logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BankApplication">
   <logicalClassDesignerModelMoniker Id="5b3f730d-aada-482e-992f-b04cdb747883" />
   <nestedChildShapes>
-    <classShape Id="52aca4ff-97f8-402a-b863-3d42dd6eade8" absoluteBounds="0.5, 0.625, 2, 2.5039061854283022" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="52aca4ff-97f8-402a-b863-3d42dd6eade8" absoluteBounds="0.5, 0.625, 2, 2.5039061854283018" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="a4a0e3d3-2384-4cf1-b4f2-9f78426ecf87" LastKnownName="Account" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="c3f666ca-90da-4a29-8e60-d51810bb0bfd" absoluteBounds="0.515, 1.0150000000000001, 1.9700000000000002, 1.162109337747097" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="9f0d6d3e-04be-48df-9aa2-e66e7087df20" absoluteBounds="0.515, 2.1871093377470974, 1.9700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="c3f666ca-90da-4a29-8e60-d51810bb0bfd" absoluteBounds="0.515, 1.0150000000000001, 1.9700000000000002, 0.84179684768120444" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="9f0d6d3e-04be-48df-9aa2-e66e7087df20" absoluteBounds="0.515, 1.8667968476812045, 1.9700000000000002, 1.1621093377470972" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c2fd36e9-1581-4142-9ab4-5b63df56218e" absoluteBounds="4.125, 2.25, 1.5, 2.6640624304612475" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="c2fd36e9-1581-4142-9ab4-5b63df56218e" absoluteBounds="4.125, 2.25, 3.25, 3.3046874105930319" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="c1c76fe1-9cb6-4cd4-8aa6-52794b737f17" LastKnownName="BankManager" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="912cda7e-22f8-4727-ab41-c5747030b81e" absoluteBounds="4.14, 2.64, 1.4700000000000002, 0.68164060264825821" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="102c45cb-56b2-4509-bb50-22fe17cb2398" absoluteBounds="4.14, 3.3316406026482586, 1.4700000000000002, 1.4824218278129895" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="912cda7e-22f8-4727-ab41-c5747030b81e" absoluteBounds="4.14, 2.64, 3.2199999999999998, 0.84179684768120444" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="102c45cb-56b2-4509-bb50-22fe17cb2398" absoluteBounds="4.14, 3.4917968476812042, 3.2199999999999998, 1.9628905629118283" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

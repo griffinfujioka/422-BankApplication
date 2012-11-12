@@ -8,8 +8,14 @@ namespace BankApplication_Csharp    /* Common namespace between all classes */
 {
     class Account : IEquatable<Account>
     {
-        #region Balance 
+        #region Attributes 
         private double _balance;
+        private int _accountNumber;
+        private string _name;
+        private string _dateCreated;
+        #endregion 
+
+        #region Balance
         public double Balance
         {
             get { return _balance; }
@@ -19,7 +25,6 @@ namespace BankApplication_Csharp    /* Common namespace between all classes */
         #endregion 
 
         #region Account number
-        private int _accountNumber;
         public int AccountNumber
         {
             get { return _accountNumber; }
@@ -28,7 +33,6 @@ namespace BankApplication_Csharp    /* Common namespace between all classes */
         #endregion 
 
         #region Name
-        private string _name;
         public string Name
         {
             get { return _name; }
@@ -37,7 +41,6 @@ namespace BankApplication_Csharp    /* Common namespace between all classes */
         #endregion 
 
         #region Date created
-        private string _dateCreated;
         public string DateCreated
         {
             get { return _dateCreated; }

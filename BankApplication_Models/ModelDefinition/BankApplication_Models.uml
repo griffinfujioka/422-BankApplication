@@ -70,28 +70,6 @@
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false" />
-          <property
-            Id="af2b1cb1-800c-491c-ba1f-e16f24dabf45"
-            name="Credit"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="706042da-f843-4667-97ee-1e8c71dbf008"
-            name="Debit"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -182,6 +160,42 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="10278a11-94c6-4e93-93b5-0f21320d17b6"
+            name="Debit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3322d821-c582-4663-a6d4-614c05b72517"
+                  name="int amount"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5fb2e698-ce0b-4ffc-88ec-dec583a4477a"
+            name="Credit"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="82e66e7e-0303-44e6-9f01-f2431443c74e"
+                  name="int amount"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -195,7 +209,7 @@
         <ownedAttributesInternal>
           <property
             Id="1db98bdd-3574-4f69-82f7-9c3cbf6126a0"
-            name="managerAccounts"
+            name="list&lt;Account&gt;"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -203,10 +217,17 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="d52446c5-cc57-4c8b-8ac4-88f66bd17061"
+                LastKnownName="managerAccounts"
+                LastKnownLocation="BankApplication_Models.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="b4136933-c077-40a2-a7bc-5bbff9ef7a02"
-            name="managerAccountsAvailable"
+            name="bool"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -214,10 +235,17 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ad4c0517-bc14-4273-be65-1feef5601569"
+                LastKnownName="managerAccountsAvailable"
+                LastKnownLocation="BankApplication_Models.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="6ccc12e6-6dc5-4df2-896e-ad5d16adaa94"
-            name="managerNumberAccounts"
+            name="int"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -225,7 +253,32 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="5ddaad92-7329-47f9-baa1-ce9fcb354641"
+                LastKnownName="managerNumberAccounts"
+                LastKnownLocation="BankApplication_Models.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6a0423f8-3918-43a7-a9a7-dafa90d7f739"
+            name="Account"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="bf566202-c86e-457e-9577-87599c8239a5"
+                LastKnownName="accountPtr"
+                LastKnownLocation="BankApplication_Models.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -292,8 +345,52 @@
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="7f803324-77c7-4fa6-a4dc-b41b994e3ae4"
+            name="get / set managerAccounts"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="cc30407f-4ea6-4a36-a68c-0056a7404713"
+            name="get / set managerAccountsAvailable"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="b991e03d-3213-4f17-bf8d-861a1a25aef9"
+            name="get / set managerNumberAccounts"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d52446c5-cc57-4c8b-8ac4-88f66bd17061"
+        name="managerAccounts" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ad4c0517-bc14-4273-be65-1feef5601569"
+        name="managerAccountsAvailable" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5ddaad92-7329-47f9-baa1-ce9fcb354641"
+        name="managerNumberAccounts" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="bf566202-c86e-457e-9577-87599c8239a5"
+        name="accountPtr" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

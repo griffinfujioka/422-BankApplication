@@ -15,6 +15,7 @@ namespace BankApplication_Csharp
         private bool managerAccountsAvailable;  // True if manager has any accounts (i.e., mNumberAccounts > 0)
         int mNumberAccounts;        // Number of accounts this manager 
         #endregion 
+
         #region Default constructor
         // Default constructor
         public BankManager()
@@ -41,12 +42,6 @@ namespace BankApplication_Csharp
 
         }
         #endregion
-
-
-
-
-
-
 
         #region Getters and Setters
         public List<Account> ManagerAccounts
@@ -114,28 +109,14 @@ namespace BankApplication_Csharp
             dateCreated = Console.ReadLine();
 
             var account = new Account(balance, accountNumber, name, dateCreated);
-            ManagerAccounts.Insert(ManagerAccounts.Count, account); 
-            int counter = 0;
-            while ((ManagerAccounts[counter] != null) && (counter < mNumberAccounts))
-            {
-                counter++; 
-            }
+            ManagerAccounts.Insert(ManagerAccounts.Count, account);
+            NumberAccounts++;
 
-            if (mNumberAccounts <= counter)
-            {
-                Console.WriteLine("WARNING: Could not create account!");
-                success = false;
-            }
-            else
-            {
-                ManagerAccounts[counter].AccountNumber = accountNumber;
-                ManagerAccounts[counter].Name = name;
-                ManagerAccounts[counter].Balance = balance;
-                ManagerAccounts[counter].DateCreated = dateCreated; 
+            ManagerAccounts[0].AccountNumber = accountNumber;
+            ManagerAccounts[0].Name = name;
+            ManagerAccounts[0].Balance = balance;
+            ManagerAccounts[0].DateCreated = dateCreated; 
 
-
-
-            }
 
             return success; 
         }
@@ -150,18 +131,26 @@ namespace BankApplication_Csharp
 
             counter = findAccount();
 
-            if ((counter < NumberAccounts) && ManagerAccounts[counter] != null) // We found the account, so delete it 
+            if (counter < NumberAccounts) // We found the account, so delete it 
             {
-                success = true; 
+                success = true;
+                Console.WriteLine("Found account.");
+                ManagerAccounts[counter].PrintBalance();
                 ManagerAccounts[counter] = null;
-                Console.WriteLine("Account deleted!"); 
+                NumberAccounts--;
+
+                Console.WriteLine("Account deleted!");
+            }
+            else
+            {
+                Console.WriteLine("Error: Could not find account."); 
             }
 
             return success; 
         }
         #endregion 
 
-
+        #region update account
         public bool updateAccount()
         {
             bool success = false;
@@ -175,7 +164,7 @@ namespace BankApplication_Csharp
 
             counter = findAccount();
 
-            if ((counter < NumberAccounts) && (ManagerAccounts[counter] != null))
+            if (counter < NumberAccounts)
             {
                 success = true;
 
@@ -188,18 +177,19 @@ namespace BankApplication_Csharp
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("Enter name: ");
+                        Console.WriteLine("Current name: " + ManagerAccounts[counter].Name); 
+                        Console.WriteLine("New name: ");
                         name = Console.ReadLine();
                         ManagerAccounts[counter].Name = name;
                         break; 
                     case 2:
                         Console.WriteLine("Enter amount to withdraw: ");
-                        balance = Convert.ToInt32(Console.ReadLine());
+                        balance = Convert.ToDouble(Console.ReadLine());
                         ManagerAccounts[counter].Debit(balance); 
                         break; 
                     case 3:
                         Console.WriteLine("Enter amount to deposit: ");
-                        deposit = Convert.ToInt32(Console.ReadLine());
+                        deposit = Convert.ToDouble(Console.ReadLine());
                         ManagerAccounts[counter].Credit(deposit); 
                         break; 
                     default:
@@ -210,9 +200,10 @@ namespace BankApplication_Csharp
 
             return success; 
         }
+        #endregion 
 
-
-		public void displayAccount()
+        #region display account
+        public void displayAccount()
         {
             int counter = 0;
             counter = findAccount();
@@ -226,8 +217,9 @@ namespace BankApplication_Csharp
                 Console.WriteLine("Error! Account does not exist"); 
             }
         }
+        #endregion 
 
-
+        #region find account
         public int findAccount()
         {
             int accountNumber = 0;
@@ -242,7 +234,9 @@ namespace BankApplication_Csharp
             }
             return counter; 
         }
+        #endregion 
 
+        #region runBankApplication
         public void runBankApplication()
         {
             int option = 0;
@@ -286,6 +280,7 @@ namespace BankApplication_Csharp
                 }
             } while (status != false);
         }
+        #endregion 
 
 
     }
