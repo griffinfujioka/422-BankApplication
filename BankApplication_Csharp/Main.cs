@@ -10,6 +10,9 @@ namespace BankApplication_Csharp
         static void Main(string[] args)
         {
             System.ConsoleKeyInfo KInfo;
+            BankManager bankApp = new BankManager(); 
+
+            bankApp.runBankApplication(); 
 
 
             #region Press Enter to exit...

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="5b3f730d-aada-482e-992f-b04cdb747883" name="BankApplication" linkedPackageId="68d5fb60-8a7c-4949-a523-dda52bec730c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="472ef666-d420-439c-b682-2d61c97d17fb">
+      <profileInstance Id="049070d4-72db-4e3d-835d-081bc2cd803a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5d79cb27-1386-48ca-90fa-0e0b8d225d95">
+      <profileInstance Id="9159e021-54cf-4224-9b28-5944051222b9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a4a0e3d3-2384-4cf1-b4f2-9f78426ecf87" name="Account" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2ec590f3-cd57-4064-b2b8-87da4ea5d4d1" />
+        <ownedAttributesInternal>
+          <property Id="0e8af4fd-c2fe-46c0-9cff-5c4d77b7cb89" name="Balance" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="859404a9-211c-4025-b26c-cbe566a4afaf" />
+          </property>
+          <property Id="d8499589-72c7-4934-ac9a-b2c0ae45ad45" name="Account number" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="62b44707-b3f1-4412-864c-72cbe4965ba3" />
+          </property>
+          <property Id="a2380e30-bded-4b9a-9373-383a8b21fca8" name="Name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8ebbbaa2-2f49-43d8-8576-19c63ecc7421" />
+          </property>
+          <property Id="024b50ac-6e4c-4e16-90a2-8818c0f8e3ec" name="Date created" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dee188f0-e6e1-434c-b6d8-1fff679fccf5" />
+          </property>
+          <property Id="4fceb177-19ce-4fe5-8937-87d4c0245073" name="Credit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="af2b1cb1-800c-491c-ba1f-e16f24dabf45" />
+          </property>
+          <property Id="c331a074-5730-4b7c-843c-2bd99b834d39" name="Debit" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="706042da-f843-4667-97ee-1e8c71dbf008" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="c9047882-5149-4f64-901b-6009c069cbc4" name="Account" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ed8b23cc-7b4a-42c8-9c64-1afc281c531a" />
+          </operation>
+          <operation Id="ec84b3b3-1a17-47c1-a02b-883a3388a3cb" name="Account" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48d046a6-4748-499e-9c3e-ae84ca6a5da3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bf92b766-aa1b-49c3-8aaa-b96f40f87180" name="double initialBalance" direction="In" isUnique="false">
+                  <elementDefinition Id="5aff6887-c22a-428f-a663-654a0cdf3d81" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="836d1fb7-99b5-470e-a06f-1898f6d9a511" name="int newAccountNumber" direction="In" isUnique="false">
+                  <elementDefinition Id="ec42d2fe-7354-4b1b-9ba7-cdc7f61092c7" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ff41cc62-17db-45a7-840c-d3125b34e928" name="string newName" direction="In" isUnique="false">
+                  <elementDefinition Id="1a85b2f1-f9cf-47e3-bc93-3190a77538ce" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c9f35959-ff42-4d8e-adb2-c91c80f227b2" name="string newDateCreated" direction="In" isUnique="false">
+                  <elementDefinition Id="fc3fa8e3-4cd9-407f-b04f-c1af8ec5b513" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2d6def37-98d4-4f66-b69a-6df59d4c0201" name="double credit" direction="In" isUnique="false">
+                  <elementDefinition Id="1d88c41a-5202-4104-a397-62067e2f8133" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="321c3874-89d8-4fcd-b133-73800e3a09cd" name="double debit" direction="In" isUnique="false">
+                  <elementDefinition Id="a3c315cc-813f-4ce6-be35-25c8a9a4de6e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6ce3aff9-931b-4f8a-a967-12d62a43f64d" name="Account" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="241091ef-707d-4319-8db0-9ed2a2e2391f" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="84388375-3875-4313-8cd2-67301bf56487" name="Account account" direction="In" isUnique="false">
+                  <elementDefinition Id="a533aa1f-a114-4c32-97f9-7970c44bac1d" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9a5aee1d-986a-49a2-b5f2-14f3e9dcacb4" name="Account" visibility="Package" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eaf1c71c-2b0f-4c0e-bcea-04c249720b0e" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c1c76fe1-9cb6-4cd4-8aa6-52794b737f17" name="BankManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8e364b7f-7e29-46e4-abda-f6f60d814731" />
+        <ownedAttributesInternal>
+          <property Id="1ca3ec35-0aa5-46a4-bc05-a065d305986a" name="managerAccounts" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1db98bdd-3574-4f69-82f7-9c3cbf6126a0" />
+          </property>
+          <property Id="9b2daad4-a8fd-4ea8-88af-a18ccef17de8" name="managerAccountsAvailable" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4136933-c077-40a2-a7bc-5bbff9ef7a02" />
+          </property>
+          <property Id="3a494065-5aad-43a5-8631-f19fadcfd422" name="managerNumberAccounts" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6ccc12e6-6dc5-4df2-896e-ad5d16adaa94" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ac3350e7-5dd3-47c6-92f0-a3ab2b965652" name="displayMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="90f645e7-0dc5-431a-8f53-4a8860f05e9e" />
+          </operation>
+          <operation Id="9a77b739-379d-4edc-855c-be593973ebe0" name="getMenuOption" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ff0c50fe-befb-46d5-9158-4d390b4aead0" />
+          </operation>
+          <operation Id="be61ad9e-be48-4cc0-b485-e42c37f2fff4" name="createAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e17c4b3f-1f5d-4573-b3ae-a6afc681ca4e" />
+          </operation>
+          <operation Id="40cd05df-fa8c-40f7-b69f-b01240b05d17" name="deleteAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="07e2fcba-1d9a-421d-a949-2ed96380532f" />
+          </operation>
+          <operation Id="e57b0a30-cdf9-4dc1-b445-b1bd2e9b6684" name="updateAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="48b6c746-914f-4320-9844-80f3520302c4" />
+          </operation>
+          <operation Id="9ad7a2c3-f867-484d-b40e-d34d022d2f19" name="displayAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="706aea82-a17e-49ac-8f33-fc6f81115c20" />
+          </operation>
+          <operation Id="b10d25c5-7987-4d05-86b7-0f624a520b64" name="findAccount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="68464ebd-2813-4c94-97ed-9f82ebcb41c5" />
+          </operation>
+          <operation Id="e777f373-3fc4-4e8a-abdb-f5e78d4583b8" name="runBankApplication" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1ebf7628-cfe1-4fd4-92a4-c17268fe1670" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="68d5fb60-8a7c-4949-a523-dda52bec730c" name="BankApplication_Models">
+    <elementDefinition Id="89b5c185-d168-4089-ad90-e5f25cb704b5" />
+  </package>
+</logicalClassDesignerModel>

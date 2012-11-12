@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel; 
 
-namespace BankApplication_Csharp
+namespace BankApplication_Csharp    /* Common namespace between all classes */ 
 {
-    class Account
+    class Account : IEquatable<Account>
     {
         #region Balance 
         private double _balance;
         public double Balance
         {
             get { return _balance; }
+            
             set { _balance = value; } 
         }
         #endregion 
@@ -43,24 +45,6 @@ namespace BankApplication_Csharp
         }
         #endregion 
 
-        #region Credit
-        private double _credit;
-        public double Credit
-        {
-            get { return _credit; }
-            set { _credit = value; } 
-        }
-        #endregion 
-
-        #region Debit
-        private double _debit;
-        public double Debit
-        {
-            get { return _debit; }
-            set { _debit = value; } 
-        }
-        #endregion 
-
         #region Constructor
         public Account()
         {
@@ -68,8 +52,6 @@ namespace BankApplication_Csharp
             Balance = 0.0;
             AccountNumber = -1;
             DateCreated = "";
-            Credit = 0.0;
-            Debit = 0.0; 
         }
         #endregion 
 
@@ -77,9 +59,7 @@ namespace BankApplication_Csharp
         public Account(double initialBalance,
             int newAccountNumber,
             string newName,
-            string newDateCreated,
-            double credit,
-            double debit)
+            string newDateCreated)
         {
             if (initialBalance < 0.0)
             {
@@ -93,8 +73,6 @@ namespace BankApplication_Csharp
             AccountNumber = newAccountNumber;
             Name = newName;
             DateCreated = newDateCreated;
-            Credit = credit;
-            Debit = debit; 
         }
         #endregion 
 
@@ -105,8 +83,6 @@ namespace BankApplication_Csharp
             this.AccountNumber = account.AccountNumber;
             this.Name = account.Name;
             this.DateCreated = account.DateCreated;
-            this.Credit = account.Credit;
-            this.Debit = account.Debit; 
         }
         #endregion 
 
@@ -116,7 +92,77 @@ namespace BankApplication_Csharp
         }/* Desctructor */
         #endregion 
 
+        #region override Equals
+        public bool Equals(Account other)
+        {
+            if (other == null)
+                return false;
+
+            return (this.Name == other.Name &&
+                this.Balance == other.Balance &&
+                this.AccountNumber == other.AccountNumber &&
+                this.DateCreated == other.DateCreated); 
+        }
+        #endregion 
+
+        #region IEnumerator Members
+        public void Reset()
+        {
+        }
+
+        public Account Current
+        {
+            get { return this; }
+        }
+
+        public bool MoveNext()
+        {
+            return false; 
+        }
+
+        public void Dispose()
+        {
+            Dispose();
+            GC.SuppressFinalize(this); 
+        }
+        #endregion 
+
+        #region Print Balance
+        public void PrintBalance()
+        {
+            Console.WriteLine("Account #: " + AccountNumber);
+            Console.WriteLine("Name: " + Name);
+            Console.WriteLine("Current balance: " + Balance);
+            Console.WriteLine("Date created: " + DateCreated);
+        }
+        #endregion 
+
+        #region Debit
+        public double Debit(double amount)
+        {
+            if (amount > Balance)
+            {
+                Console.WriteLine("Warning! Insufficient funds. \nCurrent Balance: " + Balance);
+            }
+            else
+            {
+                Balance -= amount; 
+            }
+
+            return Balance; 
+        }
+        #endregion 
+
+        #region Credit
+        public double Credit(double amount)
+        {
+            Balance += amount;
+            return Balance;
+        }
+        #endregion 
 
 
     }
+
+
 }
