@@ -131,12 +131,13 @@ namespace BankApplication_Csharp    /* Common namespace between all classes */
         #endregion 
 
         #region Print Balance
-        public void PrintBalance()
+        public bool PrintBalance()
         {
             Console.WriteLine("Account #: " + AccountNumber);
             Console.WriteLine("Name: " + Name);
             Console.WriteLine("Current balance: " + Balance);
             Console.WriteLine("Date created: " + DateCreated);
+            return true; 
         }
         #endregion 
 

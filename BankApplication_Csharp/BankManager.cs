@@ -153,7 +153,7 @@ namespace BankApplication_Csharp
         #region update account
         public bool updateAccount()
         {
-            bool success = false;
+            bool success = true;
             string name = "";
             string dateCreated = "";
             double balance = 0.0;
@@ -173,6 +173,9 @@ namespace BankApplication_Csharp
                 Console.WriteLine("3. Deposit money");
 
                 option = Convert.ToInt32(Console.ReadLine());
+
+                // for testing
+                //option = 1; 
 
                 switch (option)
                 {
@@ -194,6 +197,7 @@ namespace BankApplication_Csharp
                         break; 
                     default:
                         Console.WriteLine("ERROR: Invalid option!");
+                        success = false; 
                         break; 
                 }
             }
@@ -203,7 +207,7 @@ namespace BankApplication_Csharp
         #endregion 
 
         #region display account
-        public void displayAccount()
+        public bool displayAccount()
         {
             int counter = 0;
             counter = findAccount();
@@ -211,10 +215,12 @@ namespace BankApplication_Csharp
             if ((counter < NumberAccounts) && (ManagerAccounts[counter] != null))
             {
                 ManagerAccounts[counter].PrintBalance();
+                return true; 
             }
             else
             {
-                Console.WriteLine("Error! Account does not exist"); 
+                Console.WriteLine("Error! Account does not exist");
+                return false; 
             }
         }
         #endregion 

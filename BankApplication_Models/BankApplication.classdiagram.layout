@@ -9,12 +9,20 @@
         <OperationElementListCompartment Id="9f0d6d3e-04be-48df-9aa2-e66e7087df20" absoluteBounds="0.515, 1.8667968476812045, 1.9700000000000002, 1.1621093377470972" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c2fd36e9-1581-4142-9ab4-5b63df56218e" absoluteBounds="4.125, 2.25, 3.25, 3.3046874105930319" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+    <classShape Id="c2fd36e9-1581-4142-9ab4-5b63df56218e" absoluteBounds="4.75, 1.25, 3.25, 3.3046874105930319" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
       <classMoniker Id="c1c76fe1-9cb6-4cd4-8aa6-52794b737f17" LastKnownName="BankManager" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="912cda7e-22f8-4727-ab41-c5747030b81e" absoluteBounds="4.14, 2.64, 3.2199999999999998, 0.84179684768120444" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-        <OperationElementListCompartment Id="102c45cb-56b2-4509-bb50-22fe17cb2398" absoluteBounds="4.14, 3.4917968476812042, 3.2199999999999998, 1.9628905629118283" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="912cda7e-22f8-4727-ab41-c5747030b81e" absoluteBounds="4.765, 1.6400000000000001, 3.2199999999999998, 0.84179684768120444" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="102c45cb-56b2-4509-bb50-22fe17cb2398" absoluteBounds="4.765, 2.4917968476812042, 3.2199999999999998, 1.9628905629118283" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <associationConnector edgePoints="[(4.75 : 2.18945309271415); (2.5 : 2.18945309271415)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="1" targetMultiplicity="0...*">
+      <associationMoniker Id="0340e2f2-48d4-47ee-9b4d-e6125def5386" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="c2fd36e9-1581-4142-9ab4-5b63df56218e" />
+        <classShapeMoniker Id="52aca4ff-97f8-402a-b863-3d42dd6eade8" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </logicalClassDesignerDiagram>

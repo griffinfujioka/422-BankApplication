@@ -206,6 +206,60 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="cc3a96b5-8008-4f46-891f-11da6a316c7c"
+            isDerived="false"
+            sourceEndRoleName="BankManager"
+            targetEndRoleName="Account"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="2ec590f3-cd57-4064-b2b8-87da4ea5d4d1"
+              LastKnownName="Account"
+              LastKnownLocation="BankApplication_Models.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="93f5808e-32d3-4b9f-ba5d-e2c1ad4ab775"
+                  name="BankManager"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84e2d2cf-395b-45d7-96e7-e203427c9e6b"
+                  name="Account"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="d0b5a039-5ac7-4632-a706-3ddb84fa857c"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="1665e881-1886-4e46-b6e9-b5f46fb035cf"
+                      name="Upper"
+                      value=".*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="1db98bdd-3574-4f69-82f7-9c3cbf6126a0"

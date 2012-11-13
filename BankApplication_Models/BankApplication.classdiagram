@@ -96,6 +96,34 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="c1c76fe1-9cb6-4cd4-8aa6-52794b737f17" name="BankManager" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="8e364b7f-7e29-46e4-abda-f6f60d814731" />
+        <targetEnds>
+          <association Id="0340e2f2-48d4-47ee-9b4d-e6125def5386" isDerived="false" sourceEndRoleName="BankManager" targetEndRoleName="Account" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a4a0e3d3-2384-4cf1-b4f2-9f78426ecf87" LastKnownName="Account" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a637daca-c670-431b-9dd2-caef2ecef894" name="BankManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="93f5808e-32d3-4b9f-ba5d-e2c1ad4ab775" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b35d630e-a6e9-49b6-912a-b1ce1ed53f46" name="Account" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="d6dd895e-09d2-4a88-844f-8a81d5bd28b1" name="Lower" value="0">
+                      <elementDefinition Id="d0b5a039-5ac7-4632-a706-3ddb84fa857c" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="886640ab-cb59-4dd7-97be-d8a784852780" name="Upper" value=".*">
+                      <elementDefinition Id="1665e881-1886-4e46-b6e9-b5f46fb035cf" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="84e2d2cf-395b-45d7-96e7-e203427c9e6b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cc3a96b5-8008-4f46-891f-11da6a316c7c" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="1ca3ec35-0aa5-46a4-bc05-a065d305986a" name="list&lt;Account&gt;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1db98bdd-3574-4f69-82f7-9c3cbf6126a0" />

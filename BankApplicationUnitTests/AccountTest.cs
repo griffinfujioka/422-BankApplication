@@ -17,6 +17,7 @@ namespace BankApplicationUnitTests
 
         private TestContext testContextInstance;
 
+        #region TestContext
         /// <summary>
         ///Gets or sets the test context which provides
         ///information about and functionality for the current test run.
@@ -32,6 +33,7 @@ namespace BankApplicationUnitTests
                 testContextInstance = value;
             }
         }
+        #endregion 
 
         #region Additional test attributes
         // 
@@ -63,86 +65,82 @@ namespace BankApplicationUnitTests
         //
         #endregion
 
-
-        /// <summary>
-        ///A test for Equals
-        ///</summary>
-        [TestMethod()]
-        public void EqualsTest()
-        {
-            Account target = new Account(); // TODO: Initialize to an appropriate value
-            Account other = null; // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.Equals(other);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
-
-        /// <summary>
-        ///A test for MoveNext
-        ///</summary>
-        [TestMethod()]
-        public void MoveNextTest()
-        {
-            Account target = new Account(); // TODO: Initialize to an appropriate value
-            bool expected = false; // TODO: Initialize to an appropriate value
-            bool actual;
-            actual = target.MoveNext();
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
-        }
-
+        #region PrintBalanceTest
         /// <summary>
         ///A test for PrintBalance
         ///</summary>
         [TestMethod()]
         public void PrintBalanceTest()
         {
-            Account target = new Account(); // TODO: Initialize to an appropriate value
-            target.PrintBalance();
-            Assert.Inconclusive("A method that does not return a value cannot be verified.");
+            Account target = new Account(100.00, 12, "Test account", "11/12/12"); // TODO: Initialize to an appropriate value
+            bool actual = target.PrintBalance();
+            Assert.IsTrue(actual, "Print balance succeeded."); 
         }
+        #endregion 
 
+        #region ResetTest
         /// <summary>
         ///A test for Reset
         ///</summary>
-        [TestMethod()]
         public void ResetTest()
         {
             Account target = new Account(); // TODO: Initialize to an appropriate value
             target.Reset();
             Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
+        #endregion
 
+        #region DebitTest
         /// <summary>
         ///A test for Debit
         ///</summary>
         [TestMethod()]
         public void DebitTest()
         {
-            Account target = new Account(); // TODO: Initialize to an appropriate value
-            double amount = 0F; // TODO: Initialize to an appropriate value
-            double expected = 0F; // TODO: Initialize to an appropriate value
+            Account target = new Account(100.00, 1, "test account", "11/12/12"); // TODO: Initialize to an appropriate value
+            double amount = 25.00; // TODO: Initialize to an appropriate value
+            double expected = 75.00; // TODO: Initialize to an appropriate value
             double actual;
             actual = target.Debit(amount);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            Assert.IsTrue((actual == expected), "Debit Test passes.");
+            Assert.IsFalse(actual != expected, "Debit Test fails."); 
         }
+        #endregion 
 
+        #region DebitTest_Insufficient
+        /// <summary>
+        ///A test for Debit where the insufficient funds are available
+        ///</summary>
+        [TestMethod()]
+        public void DebitTest_Insufficient()
+        {
+            Account target = new Account(15.00, 1, "test account", "11/12/12"); // TODO: Initialize to an appropriate value
+            double amount = 25.00; // TODO: Initialize to an appropriate value
+            double expected = 15.00; // TODO: Initialize to an appropriate value
+            double actual;
+            actual = target.Debit(amount);
+            Assert.IsTrue((actual == expected), "Debit Test with insufficient funds passes.");
+            Assert.IsFalse(actual != expected, "Debit Test with insufficient funds fails.");
+        }
+        #endregion 
+
+        #region CreditTest
         /// <summary>
         ///A test for Credit
         ///</summary>
         [TestMethod()]
         public void CreditTest()
         {
-            Account target = new Account(); // TODO: Initialize to an appropriate value
-            double amount = 0F; // TODO: Initialize to an appropriate value
-            double expected = 0F; // TODO: Initialize to an appropriate value
+            Account target = new Account(15.00, 1, "test account", "11/12/12"); // TODO: Initialize to an appropriate value
+            double amount = 10.00; // TODO: Initialize to an appropriate value
+            double expected = 25.00; // TODO: Initialize to an appropriate value
             double actual;
             actual = target.Credit(amount);
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("Verify the correctness of this test method.");
+            Assert.IsTrue((actual == expected), "Credit Test passes.");
+            Assert.IsFalse(actual != expected, "Credit Test fails.");
         }
+        #endregion 
+
+
     }
 }
